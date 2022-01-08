@@ -94,5 +94,29 @@
 
 
 
+# with open("openfile.txt","a",encoding="utf8") as openfile:
+#     openfile.write("22widh 써서 넘기기")
 
 
+# class Color():
+#     def __init__(self,name):
+#         self.name = name
+
+#     def __repr__(self):
+#         return "나는 {} 입니다.".format(self.name)
+        
+#     # def __str__(self):
+#     #     return f'__str__: {self.name=}'
+    
+#     # def __repr__(self):
+#     #     return f'__repr__: {self.name=}'
+
+
+# red = Color('red')
+# yellow = Color('yellow')
+# black = Color('black')
+
+# arr = [red, yellow, black]
+
+# for ar in arr:
+#     print (ar)
