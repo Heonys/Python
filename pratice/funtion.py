@@ -120,3 +120,32 @@
 
 # for ar in arr:
 #     print (ar)
+
+
+# f-string을 습관화
+
+# str = "김지헌"
+# print(f"제이름은 {str} 입니다")
+
+# word = "python"
+# print(f'python 이라는 글자는 {len(word)}글자 입니다')
+# print(f'python은 대문자로 {word.upper()}이고 소문자로 {word.lower()} 입니다.')
+
+# print("다양한 표현식")
+# print(f'{"python":@^50}')
+
+# print(word[::-1])
+
+# import datetime as dt
+# print(f'오늘은 {dt.datetime.today()} 입니다.')
+
+# list = ['hh',2,3,4]
+# tuple = 't','u',2,3
+
+# print(f'{list}>>리스트 {tuple}>>튜플')
+
+
+
+
+
+
