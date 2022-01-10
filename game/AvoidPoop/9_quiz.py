@@ -18,11 +18,11 @@ clock = pygame.time.Clock()
 
 
 # 사용자 초기화 (배경, 이미지, 좌표, 속도, 시간, 폰트 등)
-background = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/background.png")
+background = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/AvoidPoop/background.png")
 
 
 
-charater = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/charater.png")
+charater = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/AvoidPoop/charater.png")
 charater_size = charater.get_rect().size
 charater_widh = charater_size[0]
 charater_height = charater_size[1]
@@ -39,7 +39,7 @@ start_ticks = pygame.time.get_ticks() # 초기화된 이후로 부터 시간
 
 
 
-enemy = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/enemy.png")
+enemy = pygame.image.load("C:/Users/siwmu/Desktop/web/PythonWorkspace/Python/game/AvoidPoop/enemy.png")
 enemy_size = charater.get_rect().size
 enemy_widh = charater_size[0]
 enemy_height = charater_size[1]
