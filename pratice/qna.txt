@@ -69,4 +69,16 @@ ex) x가 리스트면 > list에서 사용 가능한 함수들
  
 26. 파이썬 다중상속의 원리
 
+27. iterable객체는 반복가능한 객체 ex) list, tuple, dic, str  
 
+28. map(함수,iterable타입) >> 매핑함수
+
+29. Container타입 객체 ex) dic, set
+
+
+join
+replace
+split()
+
+
+**어렵다 >> 데코레이터
