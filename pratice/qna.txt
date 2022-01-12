@@ -82,3 +82,12 @@ split()
 
 
 **어렵다 >> 데코레이터
+
+
+current // 현재의 
+elapsed time  // 경과 시간
+rect >> rectangle // (직사각형) 범위
+collide  // 충돌
+widh 너비
+height 높이
+add mul sub div // 사측연산

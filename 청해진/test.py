@@ -17,7 +17,7 @@
 # 0. 반복문에 else 사용가능 >> while의 else는 if때와 동일, for문은 모두 실행된 후 else 실행 
 # 0. 재귀함수를 통해 점화식을 표현가능 
 # 0. 딕셔너리는 요솟값을 구하려고할때 단한가지임 > KEY값을 이용한 방법 // 애초에 순서가 없어서 인덱스 사용 안됨
-# 0. dict.get() = key값에 해당하는 값이 없으면 None을 리턴해서 오류가 발생하지 않음 >> 유용하게 씀
+# 0. dict.get(key,n) = key값에 해당하는 값이 없으면 n을 리턴해서 오류가 발생하지 않음 >> n 생략하면 기본값은 none
 # 0. pop() vs dell 차이 둘다 인덱스로 값을 지우지만 pop은 지운것을 반환 dell은 반환안함
 #    remove() >> pop, dell과 다르게 값으로 지움, 중복시 먼저나온 값 // 3개다 원본 값을 바꾸기때문에 주의
 # 0. 음수 index >> 맨 뒤부터 -1임 
@@ -30,9 +30,26 @@
 # 0. 컴프리헨션 문법을 사용하면 제너레이터가 생성됨  >> 리스트는 평가되있기 때문에 제너레이터 생성x 
 # 0. 제너레이터는 기억하지않는 1회용 이라서 소비되고 next(gen) 함수로 하나씩 사용가능 
 
+# 비교적 자주쓰는 내장함수!~
+# 0. abs() > 절대값 // all() > iterable자료형의 각항들이 전부 참일때 만 참 // any() > 하나라도 참이면 참 all()과 반대
+#    divmod(a, b) > a/b, a%b를 튜플로 반환 // filter() > map()과 문법 동일 조건에 의해 iterable자료형을 걸러내는 함수 (for문과 같이씀)
+#    hex() > 16진수 // oct() > 8진수 // pow(x, y) > x의 y제곱
+#
+# 0. list(range(5, 10)) [5, 6, 7, 8, 9]
+# 0. enumerate() // 주로 for문과 같이사용하여 iterable자료형을 (인덱스 , 값 ) 의 튜플로 반환 
+# 0. pickle 모듈 사용하기 // pickle.dump(data, file) 넣기 pickle.load(file)로 불러오기
+# 0. time.sleep(1) // 잠시 재우기  time.ctime() // 현재시간
+# 0. random.randint(1, 10) // 1 ~ 10 무작위 난수 // choice > 무작위 가져옴 // shuffle 섞기
+# 0. join() >>  '구분자'.join(리스트)
+# 0. 예외처리시 에러 발생하는 순간 탈출 후 finally
+#  
+
 
 
 #+===================================================================
+
+
+
 # def print_kwargs(**kwargs):
 #       print(kwargs)
 # print_kwargs(a='python',b='javascript')
@@ -64,4 +81,124 @@
 # print(sorted(target, key=my_key))
 # ====================================================
 
+# class Calc:
+
+#     #생성자
+#     def __init__(self, first, second):
+#         self.first = first
+#         self.second = second
+        
+#     def add(self):
+#         return self.first + self.second
+#     def mul(self):
+#         return self.first - self.second
+#     def sub(self):
+#         return self.first * self.second
+#     def div(self):
+#         return self.first / self.second
+
+
+# calc = Calc(12,3)
+# print(calc.add())
+# print(calc.mul())
+# print(calc.sub())
+# print(calc.div())
+
+# class MoreCalc(Calc):
+#     def __init__(self, first, second):
+#         super().__init__(first, second)
+    
+#     def more(self):
+#         return self.first ** self.second
+        
+# more = MoreCalc(12,3)
+
+# print(more.more())
+
+
+# nan = enumerate(['a','b','c'])
+# print(type(nan))
+
+#######################1번#############
+# a:b:c:d  >> a#b#c#d
+# 문자열의 split와 join 함수를 사용하여 위 문자열을 다음과 같이 고치시오.
+
+# str = 'a:b:c:d'
+# str_split = list(str.split(':'))
+
+# print("#".join(str_split))
+
+
+#######################2번#############
+#C에 해당하는 값이 없을 경우 70반환 
+
+# class MyError(Exception):
+#     pass
+
+
+# a = {'A':90, 'B':80}
+# print(a.get('Z','없음'))
+
+#######################4번#############
+
+# a1 = [20, 55, 67, 82, 45, 33, 90, 87, 100, 25]
+
+# a2 = filter(lambda x:x>=50,a1)
+# print(sum(a2))
+
+#######################5번#######################################
+#0, 1, 1, 2, 3, 5, 8, 13, ...
+
+# def fib(num):
+#     if num == 1:
+#         return 0 
+#     elif num == 2:
+#         return 1
+#     else:
+#         return fib(num-1) + fib(num-2)
+
+
+# def fib_list(num):
+#     return [fib[i+1] for i in range(num)] # 에러
+#     # print([ fib(i+1) for i in range(num)])
+
+# print(fib_list(3))
+
+
+#######################6번#############
+#65,45,2,3,45,8
+
+# def sum_list(*args):
+#     print(sum(args))
+
+# sum_list(65,45,2,3,45,8)
+
+######################7번#############
+# 구구단을 출력할 숫자를 입력하세요(2~9): 2
+# 2 4 6 8 10 12 14 16 18
+
+# i = int(input("몇단 : "))
+# for j in range(1,10):
+#     print(f'{i*j}',end=" ")
+
+######################8번#############
+# str_abc = """
+# DDD
+# EEE
+# CCC
+# BBB
+# AAA
+# """
+
+# with open("abc.txt","w") as str_file:
+#     str_file.write(str_abc)
+
+
+######################13번#############
+
+# DashInsert 함수는 숫자로 구성된 문자열을 입력받은 뒤 문자열 안에서 홀수가 연속되면 두 수 사이에 - 를 추가하고,
+#  짝수가 연속되면 * 를 추가하는 기능을 갖고 있다. DashInsert 함수를 완성하시오.
+
+# 입력 예시: 4546793
+# 출력 예시: 454*67-9-3
 
