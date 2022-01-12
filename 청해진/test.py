@@ -36,16 +36,16 @@
 #    hex() > 16진수 // oct() > 8진수 // pow(x, y) > x의 y제곱
 #
 # 0. list(range(5, 10)) [5, 6, 7, 8, 9]
-# 0. enumerate() // 주로 for문과 같이사용하여 iterable자료형을 (인덱스 , 값 ) 의 튜플로 반환 
+# 0. enumerate() // 주로 for문과 같이사용하여 iterable자료형을 (인덱스 , 값 ) 의 튜플로 반환 // 당연히 str도 가능함
 # 0. pickle 모듈 사용하기 // pickle.dump(data, file) 넣기 pickle.load(file)로 불러오기
 # 0. time.sleep(1) // 잠시 재우기  time.ctime() // 현재시간
 # 0. random.randint(1, 10) // 1 ~ 10 무작위 난수 // choice > 무작위 가져옴 // shuffle 섞기
 # 0. join() >>  '구분자'.join(리스트)
 # 0. 예외처리시 에러 발생하는 순간 탈출 후 finally
+# 0. list >> string 변환시  ''.join(list) // ** 단 list의 모든 원소가 str형태여야함 정수,실수이면 join 에러
 #  
 
-
-
+# 6번 ,14번
 #+===================================================================
 
 
@@ -202,3 +202,75 @@
 # 입력 예시: 4546793
 # 출력 예시: 454*67-9-3
 
+# # enumerate(list) (index, value)
+# list = ['a','b','c']
+
+
+# data = '4546793'
+# data_list = list(map(int,data)) #[4, 5, 4, 6, 7, 9, 3]
+# result = []
+
+# for index, number in enumerate(data_list):
+#     result.append(str(number))
+#     if index < len(data_list)-1:
+#         number_odd = (data_list[index] % 2 == 1) #홀:true 짝:false 
+#         number_next_odd = (data_list[index+1] % 2 == 1)
+#         if number_odd == number_next_odd:
+#             if number_odd == True:
+#                 result.append('-')
+#             else:
+#                 result.append('*')
+
+# # "".join(result)
+
+# print(result)
+# print(''.join(result))
+
+
+######################14번##  문자열 압축하기    ###########
+
+# 문자열을 입력받아 같은 문자가 연속적으로 반복되는 경우에 그 반복 횟수를 표시해 문자열을 압축하여 표시하시오.
+
+# 입력 예시: aaabbcccccca
+# 출력 예시: a3b2c6a1
+
+# data = 'aaabbcccccca'
+# data_list = list(data) #['a', 'a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'c', 'a']
+# result = []
+
+# ====================================================================
+
+# 0~9의 문자로 된 숫자를 입력받았을 때,
+# 이 입력값이 0~9의 모든 숫자를 각각 한 번씩만 사용한 것인지 확인하는 함수를 작성하시오.
+
+# 입력 예시: 0123456789 01234 01234567890 6789012345 012322456789
+# 출력 예시: True False False True False
+
+# data = '0123456789'
+# print(f'data의 길이 = {len(data)}')
+# print(f'{set(data)} 의 길이 {len(set(data))}')
+
+# def one_check(str):
+#     str_len = len(str)
+#     set_len = len(set(str))
+#     if str_len == set_len:
+#         if str_len == 10:
+#             print("True")
+#         else:
+#             print("중복은 없지만 0~9를 모두 사용하지 않음 False")
+#     else:
+#         print("False")
+        
+      
+# one_check("0123456789")
+# one_check("01234567890")
+# one_check("6789012345")
+# one_check("012322456789")
+# one_check("01234")
+# # True False True False False
+
+
+# 0~9의 문자로 된 숫자를 입력받았을 때, 이 입력값이 0~9의 모든 숫자를 각각 한 번씩만 사용한 것인지 확인하는 함수를 작성하시오.
+
+# 입력 예시: 0123456789 01234 01234567890 6789012345 012322456789
+# 출력 예시: True False False True False
