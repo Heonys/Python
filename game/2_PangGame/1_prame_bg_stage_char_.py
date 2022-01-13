@@ -2,6 +2,7 @@ import pygame
 import os
 
 
+
 pygame.init()  #초기화!! 반드시 한다고 생각
 
 #화면설정
@@ -18,6 +19,10 @@ clock = pygame.time.Clock()
 #===================================================================
 
 # 사용자 초기화 (배경, 이미지, 좌표, 속도, 시간, 폰트 등)
+
+
+
+
 
 #경로설정
 current_path = os.path.dirname(__file__) #os모듈 > 현재 파일의 위치 반환
@@ -37,6 +42,10 @@ character_widh = character_size[0]
 character_height = character_size[1] 
 character_x_con = (screen_widh/2 - character_widh/2)
 character_y_con = (screen_height - stage_height - character_height)
+character_speed = 0.3
+
+character_x = 0
+character_y = 0
 
 
 # 이벤트 루프
@@ -49,10 +58,25 @@ while running:
         if event.type == pygame.QUIT: #창이 닫힌다면?
             running = False 
 
-
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                character_x += character_speed
+            elif event.key == pygame.K_LEFT:
+                character_x -= character_speed
+            
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
+                character_x = 0
+            if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                character_y = 0
 
 
     #위치 정의(캐릭터, 경계값)
+
+    character_x_con += character_x *dt
+    character_y_con += character_y *dt
+
+
 
     #충돌 처리
 

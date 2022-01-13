@@ -158,14 +158,16 @@ ex) x가 리스트면 > list에서 사용 가능한 함수들
 
 65. String.split('구분자') >> 문자열을 구분자를 통하여 리스트로 반환  
 
-
+66. os.path.dirname(__file__) // 현재파일의 위치 
 
 
 =========================================================
 current // 현재의 
 elapsed time  // 경과 시간
 rect >> rectangle // (직사각형) 범위
-collide  // 충돌
 widh 너비
 height 높이
 add mul sub div // 사측연산
+collide  // 충돌하다
+collision // 충돌
+position (pos) // 위치 

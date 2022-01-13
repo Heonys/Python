@@ -1,6 +1,5 @@
 from os import environ
 import pygame
-from pygame.constants import SCRAP_SELECTION
 
 #초기화 반드시 한다고 생각
 pygame.init() 
