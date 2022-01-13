@@ -329,18 +329,16 @@
 
 # if a > 1 : print("참")
 
-out_list = [1, 2, 3, 4]
-in_list = [11, 22, 3, 44]
 
-for out_val in out_list:
-    print(f"out val : {out_val}")
-    for in_val in in_list:
-        print(f"in val : {in_val}")
-        if out_val == in_val:
-            print("충돌")
-            break
-    else:
-        continue
-    break
+# out_for = [1, 2, 3, 4] 
+# in_for = [11, 22, 3, 44]
 
-
+# for out_val in out_for:
+#     for in_val in in_for:
+#         if out_val == in_val:
+#             print("충돌")
+#             break
+#     else:
+#         continue
+#     break
+        

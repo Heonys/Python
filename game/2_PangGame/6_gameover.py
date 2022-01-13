@@ -235,6 +235,10 @@ while running:
                         'init_speed_y' : ball_speed_y[ball_img_idx+1] #최초속도
                     })
                 break
+        else:
+            continue
+        break # 안쪽 for문에서 break를 만나면 진입가능 한번에 탈출가능  
+
 
 
     # 충돌된 공, 무기 없애기
@@ -252,8 +256,7 @@ while running:
         
         running = False
         
-        
-    print(len(balls))
+
 
     #화면에 그리기
     screen.blit(background,(0,0))
