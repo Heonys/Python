@@ -1,4 +1,5 @@
-
+#0. 한줄 if문 1) if '조건' : '참'
+#             2) '참' if '조건' else '거짓' 
 
 
 #+===================================================================
@@ -306,3 +307,40 @@
 
 # # print(lis[-1])
 # print(lis[:-1])
+
+
+# 1. 참만 있을때 
+# a = 3
+# if a > 1:
+#     print("참")
+
+# if print("참") :
+#     pass
+#  10 if x > 0 else 20
+# if print('참') a > 1 else print("거짓")
+# if a>1 : print("참")
+
+# print("참") if a>1 else print("거짓")
+# print("참") if a<1 else print("거짓")
+
+# a = 3 
+# if a > 1:
+#     print("참")
+
+# if a > 1 : print("참")
+
+out_list = [1, 2, 3, 4]
+in_list = [11, 22, 3, 44]
+
+for out_val in out_list:
+    print(f"out val : {out_val}")
+    for in_val in in_list:
+        print(f"in val : {in_val}")
+        if out_val == in_val:
+            print("충돌")
+            break
+    else:
+        continue
+    break
+
+
